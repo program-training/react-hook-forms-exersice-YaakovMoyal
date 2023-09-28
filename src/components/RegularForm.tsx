@@ -4,21 +4,21 @@ function RegularForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-  } = useForm({ defaultValues: { userName: "", Email: "", password: "" } });
+    formState: { errors, isValid },
+  } = useForm({ defaultValues: { UserName: "", Email: "", Password: "" } });
 
   return (
     <form onSubmit={handleSubmit((data) => console.log(data))}>
       <h1>Changed To React Hook Form</h1>
       <div>
         <input
-          placeholder="userName"
-          {...register("userName", {
-            required: " userName is required",
+          placeholder="UserName"
+          {...register("UserName", {
+            required: " UserName is required",
             minLength: { value: 2, message: " min 2 char" },
           })}
         />
-        {errors.userName && <span>{errors.userName?.message}</span>}
+        {errors.UserName && <span>{errors.UserName?.message}</span>}
       </div>
       <div>
         <input
@@ -36,19 +36,19 @@ function RegularForm() {
 
       <div>
         <input
-          placeholder="password"
-          {...register("password", {
-            required: " password is required",
+          placeholder="Password"
+          {...register("Password", {
+            required: " Password is required",
             pattern: {
               value:
-                /((?=.*\d{1})(?=.*[A-Z]{1})(?=.*[a-z]{1})(?=.*[!@#$%^&*-]{1}).{7,20})/g,
+                /((?=.*\d{1})(?=.*[A-Z]{1})(?=.*[a-z]{1})(?=.*[!@#$%^&*-]{1}).{8,20})/g,
               message: " הקוד לא תקין",
             },
           })}
         />
-        {errors.password && <span>{errors.password?.message}</span>}
+        {errors.Password && <span>{errors.Password?.message}</span>}
       </div>
-      <div>{<input type="submit" id="submit" />}</div>
+      <input hidden={!isValid} type="submit" id="submit" />
     </form>
   );
 }
