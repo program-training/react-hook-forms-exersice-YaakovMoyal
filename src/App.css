@@ -1,0 +1,29 @@
+/* סגנון לתיבת הטקסט */
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin: 4px;
+}
+
+/* סגנון לכפתור */
+#submit {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* סגנון לתוכן שמוצג כאשר הכפתור נלחץ (פרטים מוצגים) */
+span {
+  color: red;
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
